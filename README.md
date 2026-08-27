@@ -297,13 +297,15 @@ Tests cover preprocessing shape and scale, model input/output behavior, API heal
 
 ## Deployment
 
-The backend and frontend are designed to deploy separately. Provide the deployed backend URL as `BACKEND_URL` to Streamlit Community Cloud. The documented Uvicorn command is suitable for Render-style services. Deployment is not claimed as complete by this repository.
+The backend and frontend are deployed separately. The backend runs on Render, and the frontend runs on Streamlit Community Cloud. The frontend uses `BACKEND_URL` to communicate with the deployed backend.
 
 ## Live Demo
 
-Frontend: To be deployed
+- Frontend app: [MNIST ANN Classifier](https://mnist-ann-project-9rofpnly7hwvnkqgyuyrie.streamlit.app/)
+- Backend API: [Render API](https://mnist-ann-project-1.onrender.com/)
+- Swagger docs: [API Documentation](https://mnist-ann-project-1.onrender.com/docs)
+- GitHub repository: [mnist-ann-project](https://github.com/kumarrajababu5454-lgtm/mnist-ann-project)
 
-Backend API: To be deployed
 
 ## Limitations
 
