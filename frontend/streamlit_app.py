@@ -6,7 +6,16 @@ import requests
 import streamlit as st
 from PIL import Image
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000").rstrip("/")
+
+def get_backend_url() -> str:
+    try:
+        secret_url = st.secrets.get("BACKEND_URL")
+    except (FileNotFoundError, KeyError):
+        secret_url = None
+    return (secret_url or os.getenv("BACKEND_URL", "http://127.0.0.1:8000")).rstrip("/")
+
+
+BACKEND_URL = get_backend_url()
 
 st.set_page_config(page_title="MNIST ANN Classifier", page_icon="8", layout="centered")
 st.title("MNIST Handwritten Digit Classifier")
